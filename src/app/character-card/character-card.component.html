@@ -1,0 +1,29 @@
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">{{ character.name }}</p>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <label class="label">Health</label>
+        </div>
+        <div class="field-body">
+          <span class="control">{{ character.health }}</span>
+        </div>
+      </div>
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <label class="label">Initiative</label>
+        </div>
+        <div class="field-body">
+          <span class="control">{{ character.initiative }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="card-footer">
+    <a href="#" class="card-footer-item">Edit</a>
+    <a href="#" class="card-footer-item">Delete</a>
+  </footer>
+</div>

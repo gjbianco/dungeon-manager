@@ -1,0 +1,73 @@
+<h3 class="title is-3">Dice Roller</h3>
+
+<form (submit)="rollDice()">
+  <div class="columns">
+    <div class="column">
+      <select
+        class="select is-large"
+        name="diceAmount"
+        [(ngModel)]="diceAmount"
+      >
+        <option *ngFor="let n of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" [value]="n">{{
+          n
+        }}</option>
+      </select>
+    </div>
+
+    <div class="column">
+      <select class="select is-large" name="sides" [(ngModel)]="sides">
+        <option value="2">d2</option>
+        <option value="4">d4</option>
+        <option value="6">d6</option>
+        <option value="8">d8</option>
+        <option value="10">d10</option>
+        <option value="12">d12</option>
+        <option value="20">d20</option>
+        <option value="100">d100</option>
+      </select>
+    </div>
+
+    <div class="column">
+      <span class="icon is-large">
+        <i class="fas fa-plus"></i>
+      </span>
+    </div>
+
+    <div class="column">
+      <input
+        type="number"
+        class="input is-large"
+        name="modifier"
+        [(ngModel)]="modifier"
+      />
+    </div>
+
+    <div class="column">
+      <button type="submit" class="button is-primary is-large">
+        Roll
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="results.length > 0">
+    <br />
+
+    <h3 class="title is-3">
+      {{ buildString(results[results.length - 1]) }}
+    </h3>
+
+    <br />
+
+    <div>
+      <h4 class="title is-4">
+        History
+        <button class="button is-small" (click)="clearResults()">Clear</button>
+      </h4>
+      <pre>
+    <div *ngFor="let result of rollHistory">
+      <span>{{ buildString(result) }}</span>
+    </div>
+  </pre>
+    </div>
+  </div>
+</form>
