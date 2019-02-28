@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { map, padEnd, random, reverse, range, slice, sum } from 'lodash';
+import { map, padEnd, reverse, range, slice, sum } from 'lodash';
+import random from 'random';
 
 interface DiceResult {
   diceAmount: number;
@@ -30,7 +31,7 @@ export class DiceRollerComponent implements OnInit {
   rollDice() {
     const { diceAmount, sides, modifier } = this;
     const rolls = map(range(this.diceAmount), () =>
-      random(1, this.sides, false)
+      random.int(1, parseInt(this.sides.toString(), 10))
     );
     const total = sum(rolls) + this.modifier;
     this.results.push({ diceAmount, sides, modifier, rolls, total });
