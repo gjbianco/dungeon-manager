@@ -1,14 +1,19 @@
 {
   "name": "dungeon-manager",
   "version": "0.0.0",
+  "author": {
+    "name": "Guy Bianco IV",
+    "email": "gjbiancoiv@gmail.com",
+    "url": "https://guy.sh"
+  },
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "now-build": "npm run build"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
