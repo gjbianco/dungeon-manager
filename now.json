@@ -1,5 +1,11 @@
 {
   "name": "dungeon-manager",
   "version": 2,
-  "builds": [{ "src": "dist", "use": "@now/static" }]
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "dist" }
+    }
+  ]
 }
