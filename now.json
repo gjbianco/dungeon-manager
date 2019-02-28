@@ -1,4 +1,5 @@
 {
   "name": "dungeon-manager",
-  "version": 2
+  "version": 2,
+  "builds": [{ "src": "dist", "use": "@now/static" }]
 }
